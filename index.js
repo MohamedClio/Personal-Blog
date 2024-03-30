@@ -24,3 +24,6 @@ app.get("/edit", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about.ejs");
 });
+app.get("/blog1", (req, res) => {
+  res.render("blog1.ejs");
+});

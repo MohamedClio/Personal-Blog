@@ -2,3 +2,32 @@
   width: 40px;
   height: 40px;
 }
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: rgb(112, 107, 107);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  text-shadow: #283149 0 5px;
+  border-radius: 10px;
+}
+.lettingGo {
+  text-align: start;
+  font-family: "Kanit", sans-serif;
+}
+ol {
+  text-align: start;
+}
+#feel {
+  color: #283149;
+  text-shadow: blanchedalmond 0 3px;
+}
+.blog1 {
+  background-color: #283149;
+  color: blanchedalmond;
+  text-align: center;
+}
