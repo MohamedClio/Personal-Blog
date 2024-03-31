@@ -1,5 +1,46 @@
 <%- include("partials/header.ejs") %>
 
-<h1>placeholder text</h1>
-
+<div class="container">
+<form action="/submit" method="post">
+  <h2 style="margin-bottom: 20px;">Create a new blog</h2>
+  <div class="form-row">
+    <div class="form-group col-md-12 createForm" style="margin-bottom: 20px;">
+      <label for="inputTitle4">How do you want to name your Blog?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputTitle4"
+        placeholder="Please enter your blog title here" required
+      />
+    </div>
+  </div>
+  <div class="form-group col-md-3" style="margin-bottom: 20px;">
+    <label for="category">What type of blog is this?</label>
+    <select multiple class="form-control" id="category" required>
+      <option>World</option>
+      <option>Personal</option>
+      <option>Tech</option>
+      <option>Travel</option>
+      <option>Lifestyle</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <p>Upload blog image:</p>
+  <input type="file" id="myFile" accept="image/png, image/jpeg, image,jpg" required class="choose-file">
+  <div class="blog-body" style="margin-bottom: 20px;">
+    <label for="blogBody">Blog body</label>
+    <textarea
+      id="blogBody"
+      name="body"
+      placeholder="Type away all your thoughts here buddy!"
+    ></textarea>
+  </div>
+  <div class="submit-btn">
+    <input type="submit" name="Submit" value="Publish" class="btn submit-btn form-control">
+</form>
+</div>
+<% const months =
+  ["Jan","Feb","Mar","Apr","Mai","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] %>
+  <% const date = new Date(); %> <% const blogDate = `${date.getDate()}
+  ${months[date.getMonth()]}`; %>
 <%- include("partials/footer.ejs") %>

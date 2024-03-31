@@ -31,3 +31,19 @@ ol {
   color: blanchedalmond;
   text-align: center;
 }
+#blogBody {
+  height: 300px;
+  width: 100%;
+  display: block;
+}
+.submit-btn {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+}
+.choose-file {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
