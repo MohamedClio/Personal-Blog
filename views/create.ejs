@@ -1,44 +1,62 @@
 <%- include("partials/header.ejs") %>
 
-<div class="container">
-<form action="/submit" method="post">
-  <h2 style="margin-bottom: 20px;">Create a new blog</h2>
-  <div class="form-row">
-    <div class="form-group col-md-12 createForm" style="margin-bottom: 20px;">
-      <label for="inputTitle4">How do you want to name your Blog?</label>
-      <input
-        type="text"
-        class="form-control"
-        id="inputTitle4"
-        placeholder="Please enter your blog title here" required
-      />
+<div class="app container">
+    <div class="header">
+        <h2 class="header">Create a new blog</h2>
     </div>
-  </div>
-  <div class="form-group col-md-3" style="margin-bottom: 20px;">
-    <label for="category">What type of blog is this?</label>
-    <select multiple class="form-control" id="category" required>
-      <option>World</option>
-      <option>Personal</option>
-      <option>Tech</option>
-      <option>Travel</option>
-      <option>Lifestyle</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <p>Upload blog image:</p>
-  <input type="file" id="myFile" accept="image/png, image/jpeg, image,jpg" required class="choose-file">
-  <div class="blog-body" style="margin-bottom: 20px;">
-    <label for="blogBody">Blog body</label>
-    <textarea
-      id="blogBody"
-      name="body"
-      placeholder="Type away all your thoughts here buddy!"
-    ></textarea>
-  </div>
-  <div class="submit-btn">
-    <input type="submit" name="Submit" value="Publish" class="btn submit-btn form-control">
-</form>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+  
+         <div class="form-row">
+             <div class="form-group col-md-12 createForm" style="margin-bottom: 20px;">
+             <label for="inputTitle4">How do you want to name your Blog?</label>
+                 <input
+                 name="blog_title"
+                 type="text"
+                 class="form-control"
+                 id="inputTitle4"
+                 placeholder="Please enter your blog title here" required
+                 />
+             </div>
+         </div>
+
+
+        <div class="form-group col-md-3" style="margin-bottom: 20px;">
+         <label for="category">What type of blog is this?</label>
+             <select multiple class="form-control" id="category" name="blog_type" required>
+                 <option>World</option>
+                 <option>Personal</option>
+                 <option>Tech</option>
+                 <option>Travel</option>
+                 <option>Lifestyle</option>
+                 <option>Other</option>
+            </select>
+        </div>
+
+         <div class="header">
+             <h3>Upload blog image</h3>
+             <div class="server-messages"></div>
+         </div>
+         <div class="input-div">
+             <p>Drag & drop images here or <span class="browse">Browse</span></p>
+             <input type="file" class="file" accept="image/png, image/jpeg, image,jpg" required class="choose-file" name="file"> 
+         </div>
+
+         <div class="header">
+             <h3>Blog Body</h3>
+         </div>
+        <div class="blog-body" style="margin-bottom: 20px;">
+             <textarea
+             id="blogBody"
+             name="blog_body"
+             placeholder="Type away all your thoughts here buddy!"
+        ></textarea>
+         </div>
+
+        <div class="submit-btn">
+             <input type="submit" name="submit" value="Publish" class="btn submit-btn form-control">
+    </form>
 </div>
+
 <% const months =
   ["Jan","Feb","Mar","Apr","Mai","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] %>
   <% const date = new Date(); %> <% const blogDate = `${date.getDate()}
